@@ -47,7 +47,10 @@
 	}
 	.container2{
 		margin-left:500px;
-		margin-top: -605px;
+		margin-top:-935px;
+	}
+	p{
+		width:30% ;
 	}
 </style>
 <body>
@@ -81,7 +84,6 @@
 			<Strong>Select date : </strong>
 				<input type="text" id="datepicker3"/> <br><br>
 	</div>
-	<div class="container2">
 	<!--Datetime Picker Example-4-->
 	<div class="datepicker1">
 		<p class="datetimepicker">DateTime Picker Example-4</p>
@@ -97,6 +99,8 @@
 					<input type="text" id="datepicker5"/> 
 					<img src="calendar.png" alt=" " id="calendar" height="20px"><br><br>
 		</div>
+	<div class="container2">
+	
 		<!--Datetime Picker Example-6-->
 		<div class="datepicker1">
 			<p class="datetimepicker">DateTime Picker Example-6</p> 
@@ -112,8 +116,40 @@
 							<br> <br>
 					<p> Disabled Future Dates in the calendar </p>
 		</div>
+		<!--Datetime Picker Example-8-->
+		<div class="datepicker1">
+			<p class="datetimepicker">DateTime Picker Example-8</p> 
+				<Strong>Select date : </strong>
+					<input type="text" id="datepicker8"/> <!--Disabling the selection of weekends-->
+							<br> <br>
+					<p> Disabling the selection of weekends in the calendar </p>
+		</div>
 		
+		<!--Datetime Picker Example-9-->
+		<div class="datepicker1">
+			<p class="datetimepicker">DateTime Picker Example-9</p> 
+				<Strong>Select date : </strong>
+					<input type="text" id="datepicker9"/> <!--Disabling the Date selection for Monday-->
+							<br> <br>
+					<p> Disabling the Date selection for Monday in the calendar </p>
+		</div>
 		
+		<!--Datetime Picker Example-10-->
+		<div class="datepicker1">
+			<p class="datetimepicker">DateTime Picker Example-10</p> 
+				<Strong>Select date : </strong>
+					<input type="text" id="datepicker10"/> <!--Show Other Months in the Calendar-->
+							<br> <br>
+					<p> Show Other Months in the calendar </p>
+		</div>
+		<!--Datetime Picker Example-11-->
+		<div class="datepicker1">
+			<p class="datetimepicker">DateTime Picker Example-11</p> 
+				<Strong>Select date : </strong>
+					<input type="text" id="datepicker11"/> <!--Show Week in the Calendar-->
+							<br> <br>
+					<p> Show Weeks in the calendar </p>
+		</div>
 		
 	</div>
 	
@@ -191,6 +227,44 @@
 			});
 		}); 
 	</script>
+	<!--Script for datetime picker Example-8-->
+	<script type="text/javascript">
+         $(function() {
+			$( "#datepicker8" ).datepicker({
+				beforeShowDay : $.datepicker.noWeekends   <!--Disabling Weekends in the Calendar -->
+			});
+		}); 
+	</script>
+	<!--Script for datetime picker Example-9-->
+	<script type="text/javascript">
+         function DisableMonday(date) {
+			var day = date.getDay();
+				if(day == 1) {  <!--Disabling only Monday in the Calendar -->
+					return [false] ;
+					}
+					else{
+					return [true] ;
+					}
+				}
+			$(function() {
+			 $( "#datepicker9" ).datepicker({
+			 beforeShowDay: DisableMonday
+			 });
+		});
+	</script>
+	<!--Script for datetime picker Example-10-->
+	<script type="text/javascript">
+         	$( "#datepicker10" ).datepicker({
+				showOtherMonths : true   <!--Show Other Months in the Calendar -->
+			});
+		</script>
+	<!--Script for datetime picker Example-11-->
+	<script type="text/javascript">
+         	$( "#datepicker11" ).datepicker({
+				showWeek : true   <!--Show Weeks in the Calendar -->
+			});
+		</script>
+	
 </body>
 </html>
 
